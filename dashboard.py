@@ -205,7 +205,7 @@ app.layout = html.Div(id="everything",children=[
                             )
                         ], width=9)  # Graph takes more space
                     ], justify='start', style={'max-width': '90%', 'margin': 'auto'}),
-                    html.P(className="writing",children=[
+                    html.P(className="writing hidden",children=[
                         html.B("Total Investment Growth: "),
                         "The Canadian tech sector saw an 82.47% increase in total investment, reflecting strong growth.", html.Br(),
                         html.B("Deal Volume & Funding Size: "),
@@ -215,7 +215,7 @@ app.layout = html.Div(id="everything",children=[
                         "Ontario led with $22 billion in investment, followed by British Columbia at $12 billion. Investment peaked in 2021–2022 for Ontario, BC, and Quebec, while other provinces saw no clear peak."
                     ], style={'margin-left': '50px', 'margin-top': '30px'}),
                 ]),
-                html.Div(className="graph-box",children=[
+                html.Div(className="graph-box hiddenleft",children=[
                     dcc.Tab(label='Total Investment', children=[dcc.Graph(figure=fig_investment, className="graph", style={'width': '100%', 'margin': 'auto'})]),
                     html.P([
                         html.B("Total Investment Growth"),
@@ -223,7 +223,7 @@ app.layout = html.Div(id="everything",children=[
                         "The Canadian tech sector experienced a significant surge in total investment, with an increase of 82.47%. This indicates that the sector has been flourishing and attracting more capital, showing a strong trend of growth, particularly in recent years.",
                     ], style={'margin-left': '75px', 'text-align': 'left'}),
                 ]),
-                html.Div(className="graph-box",children=[
+                html.Div(className="graph-box hiddenright",children=[
                     html.P([
                         html.B("Deal Volume & Funding Size"),
                         html.Br(),
@@ -231,7 +231,7 @@ app.layout = html.Div(id="everything",children=[
                     ], style={'margin-right': '75px', 'text-align': 'right'}),
                     dcc.Tab(label='Deal Volume', children=[dcc.Graph(figure=fig_deals,className="graph",style={'width': '80%', 'height': '500px', 'margin': 'auto'})]),
                 ]),
-                html.Div(className="graph-box",children=[
+                html.Div(className="graph-box hiddenleft",children=[
                     dcc.Tab(label='Deal Size Distribution', children=[dcc.Graph(figure=fig_deal_size,className="graph",style={'width': '80%', 'height': '500px', 'margin': 'auto'})]),
                     html.P([
                         html.B("Investment Size Trends"),
@@ -239,7 +239,7 @@ app.layout = html.Div(id="everything",children=[
                         "A significant portion of the investment, about $24.9 billion, went into the $100M+ category. This highlights a strong preference for late-stage investments, where larger sums are directed into more mature companies. The trend shows a reduction in smaller deals, emphasizing a shift towards funding well-established, high-growth companies rather than early-stage startups.",
                     ], style={'margin-left': '75px', 'text-align': 'left'}),
                 ]),
-                html.Div(className="graph-box",children=[
+                html.Div(className="graph-box hiddenright",children=[
                     html.P([
                             html.B("Ontario and Regional Investment Peaks"),
                             html.Br(),
@@ -258,7 +258,7 @@ app.layout = html.Div(id="everything",children=[
                         "The Seed stage dominated, accounting for 36.34% of all deals. This was followed by Series A (15.61%) and Pre-seed (15.2%) deals, showing that early-stage investments still make up a significant portion of the overall deal volume. However, as the stages progress, the percentage of deals declines, indicating that there are fewer investments at later funding stages such as Series B, C, and beyond.",
                     ], style={'margin-left': '75px', 'text-align': 'left'}),
                 ]),
-                html.Div(className="graph-wrap",children=[
+                html.Div(className="graph-wrap hidden",children=[
                     dcc.Tab(label='Average Deal Size Over Time', children=[dcc.Graph(figure=fig_avg_deal_size,className="graph",style={'flex': '1 1 40%','margin-right': '20px'})]),
                     dcc.Tab(label='Deal Trends Over Years', children=[dcc.Graph(figure=fig_deal_trends,className="graph",style={'flex': '1 1 40%','margin-left': '20px'})]),
                     html.P([
@@ -287,7 +287,7 @@ app.layout = html.Div(id="everything",children=[
                         "The United States leads the investment landscape with 1096 firms, followed by Canada with 587 firms and other international investors at 580 firms. This shows the overwhelming dominance of US-based investment firms in the market, though Canada still plays a significant role in funding tech companies, with a notable number of firms actively participating.",
                     ], style={'margin-left': '75px', 'text-align': 'left'}),
                 ]),
-                html.Div(className="graph-box",children=[
+                html.Div(className="graph-box hiddenright",children=[
                     html.P([
                         html.B("Investment Firms by Stage & Country"),
                         html.Br(),
@@ -299,7 +299,7 @@ app.layout = html.Div(id="everything",children=[
                         style={'width': '100%', 'margin': 'auto'}
                     ),
                 ]),
-                html.Div(className="graph-box",children=[
+                html.Div(className="graph-box hiddenleft",children=[
                     dcc.Graph(
                         figure=fig3,
                         className="graph",
@@ -311,7 +311,7 @@ app.layout = html.Div(id="everything",children=[
                         "Series F deals have an average deal size of $450 million, which is significantly larger than the Pre-Seed average of $698,000. This indicates that as companies mature through the funding stages, the investments grow substantially in size, reflecting the increasing maturity and valuation of the companies involved.",
                     ], style={'margin-left': '75px', 'text-align': 'left'}),
                 ]),
-                html.Div(className="graph-box",children=[
+                html.Div(className="graph-box hiddenright",children=[
                     html.P([
                         html.B("Leading Investors"),
                         html.Br(),
@@ -323,7 +323,7 @@ app.layout = html.Div(id="everything",children=[
                         style={'width': '100%', 'margin': 'auto'}
                     ),
                 ]),
-                html.P([
+                html.P(className="hidden",children=[
                     html.B("Y Combinator and BDC Capital show consistent investment activity year over year. In contrast, other firms like Investissement Québec show more targeted investment activity, likely focused on specific sectors or regional trends. The fluctuation in activity levels underscores that some investors are more agile, reacting to market conditions, while others are more selective in their investment choices."),
                 ], style={'font-size': '30px', 'margin': '35px 5% 100px 5%', 'text-align': 'left'}),
             ]),
@@ -340,7 +340,7 @@ app.layout = html.Div(id="everything",children=[
                         ], style={'margin-left': '75px', 'text-align': 'left'}),
                     ]),
                 ]),
-                html.Div([
+                html.Div(className="hidden",children=[
                     html.H3("Investment Trends by Major Headquarter Locations",style={'text-align': 'center', 'margin-top': '50px', 'margin-left': '50px'}),
                     html.P(className="writing",children=[
                         "British Columbia leads with the highest average deal size of $23.5 million, primarily driven by investments in Cleantech and Biotech sectors. Waterloo follows closely with an average of $22.5 million, largely fueled by investments in AI and SaaS. In contrast, Toronto sees more deals overall, but the average deal size is lower at $18 million, with a focus on sectors like MarTech, FinTech, and HealthTech.",
@@ -352,7 +352,7 @@ app.layout = html.Div(id="everything",children=[
                         style={'margin': 'auto', 'width': '90%', 'height': '700px'}
                     )
                 ]),
-                html.Div(className="graph-wrap",children=[
+                html.Div(className="graph-wrap hidden",children=[
                     dcc.Graph(figure=inv_reg, className="graph",
                             style={'flex': '1 1 25%', 'margin-top': '30px', 'margin-right': '30px', 'text-align': 'center'},
                     ),
