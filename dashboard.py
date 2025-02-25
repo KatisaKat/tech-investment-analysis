@@ -166,6 +166,7 @@ map_hq.update_layout(
 
 # ------------------------- Putting everything into a dashboard -------------------------
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
 
 app.layout = html.Div(id="everything",children=[
     html.H1("Canadian Tech Investments Dashboard", id="main-header"),
