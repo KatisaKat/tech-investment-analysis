@@ -67,3 +67,35 @@ P {
     margin: auto;
     word-wrap: break-word;
 }
+
+.hidden{
+	opacity: 0;
+	filter: blur(5px);
+	transition: all 1s;
+}
+
+.hiddenleft{
+	opacity: 0;
+	filter: blur(5px);
+	transform: translateX(-5%);
+	transition: all 1s;
+}
+
+.hiddenright{
+	opacity: 0;
+	filter: blur(5px);
+	transform: translateX(5%);
+	transition: all 1s;
+}
+
+.show {
+	opacity: 1;
+	filter: blur(0);
+	transform: translateX(0);
+}
+
+@media(prefers-reduced-motion){
+    .hidden, .hiddenright, .hiddenleft {
+        transition: none;
+    }
+}
